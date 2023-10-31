@@ -1,0 +1,3 @@
+body {
+	background-image: linear-gradient(var(--color-primary), var(--color-secondary), var(--color-accent-1));
+}
