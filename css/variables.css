@@ -1,0 +1,39 @@
+:root {
+	--font-size-desktop-headline: 60px;
+	--font-size-tablet-headline: 50px;
+	--font-size-phone-headline: 27px;
+
+	--font-size-desktop-h2: 50px;
+	--font-size-tablet-h2: 40px;
+	--font-size-phone-h2: 20px;
+
+	--font-size-desktop-h3: 30px;
+	--font-size-tablet-h3: 20px;
+	--font-size-phone-h3: 18px;
+
+	--font-size-desktop-h4: 24px;
+	--font-size-tablet-h4: 170px;
+	--font-size-phone-h4: 16px;
+
+	--font-size-desktop-base: 22px;
+	--font-size-tablet-base: 20px;
+	--font-size-phone-base: 14px;
+
+	--color-background: #000000;
+	--color-foreground: #ffffff;
+
+	--color-primary: #35005F;
+	--color-secondary: #6F00C6;
+
+	--color-accent-1: #FF50ED;
+	--color-accent-2: #05D2FF;
+
+	--border-radius: 15px;
+	--border-radius-max: 50px;
+
+	--spacing-x-small: 0.5rem;
+	--spacing-small: 1rem;
+	--spacing-medium: 1.5rem;
+	--spacing-large: 2rem;
+	--spacing-larger: 3rem;
+}

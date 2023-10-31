@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Inter-Regular';
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+}
+
+button {
+	font: inherit;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
