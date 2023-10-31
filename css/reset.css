@@ -20,3 +20,19 @@ button {
 	border: none;
 	cursor: pointer;
 }
+
+h1 {
+	font-size: var(--font-size-desktop-h1);
+}
+
+h2 {
+	font-size: var(--font-size-desktop-h2);
+}
+
+h3 {
+	font-size: var(--font-size-desktop-h3);
+}
+
+h4 {
+	font-size: var(--font-size-desktop-h4);
+}
