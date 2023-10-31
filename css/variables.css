@@ -1,7 +1,7 @@
 :root {
-	--font-size-desktop-headline: 60px;
-	--font-size-tablet-headline: 50px;
-	--font-size-phone-headline: 27px;
+	--font-size-desktop-h1: 60px;
+	--font-size-tablet-h1: 50px;
+	--font-size-phone-h1: 27px;
 
 	--font-size-desktop-h2: 50px;
 	--font-size-tablet-h2: 40px;
