@@ -6,19 +6,19 @@ body {
 
 /* ------------------------------------ text styles ------------------------------------ */
 
-.text-color--blue {
+.text-theme--blue {
 	color: var(--color-accent-2);
 }
 
-.text-color--pink {
+.text-theme--pink {
 	color: var(--color-accent-1);
 }
 
-.text-color--white {
+.text-theme--white {
 	color: var(--color-foreground);
 }
 
-.text-weight--bold {
+.text-style--bold {
 	font-family: 'Inter-Bold';
 }
 
@@ -111,7 +111,7 @@ header img {
 	text-align: center;
 }
 
-.header__content__headlines-container {
+.headlines-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -120,14 +120,14 @@ header img {
 	width: 100%;
 }
 
-.header__content__headlines__timeAndPlace-container {
+.headlines-container__timeAndPlace-container {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-medium);
 	text-align: start;
 }
 
-.header__content__keyPoints-container {
+.keyPoints-container {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
