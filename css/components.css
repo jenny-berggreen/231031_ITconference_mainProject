@@ -1,15 +1,18 @@
-/* ------------------------------------ register button filled ------------------------------------ */
+/* ------------------------------------ register button ------------------------------------ */
 
 .register-button {
 	width: 220px;
 	height: 55px;
 	border-radius: var(--border-radius);
+	font-family: 'Inter-SemiBold';
+	font-size: var(--font-size-desktop-base);
 }
 
-.register-button--filled {
-	
-	background-color: var(--color-accent-2);
+/* filled */
 
+.register-button--filled {
+	background-color: var(--color-accent-2);
+	color: var(--color-primary);
 }
 
 .register-button--filled:hover {
@@ -20,6 +23,25 @@
 .register-button--filled:active {
 	background-color: var(--color-secondary);
 	color: var(--color-foreground);
+}
+
+/* border */
+
+.register-button--border {
+	background-color: none;
+	color: var(--color-foreground);
+	border: solid 2px var(--color-accent-2);
+}
+
+.register-button--border:hover {
+	background-color: var(--color-accent-2);
+	color: var(--color-primary);
+}
+
+.register-button--border:active {
+	background-color: var(--color-secondary);
+	color: var(--color-foreground);
+	border: none;
 }
 
 /* ------------------------------------ ------------------------------------ */
