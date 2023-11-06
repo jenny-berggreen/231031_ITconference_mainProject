@@ -175,7 +175,7 @@ main {
 .about-section {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-medium);
+	gap: var(--spacing-larger);
 	align-items: center;
 
 	width: 90%;
@@ -184,5 +184,12 @@ main {
 	border-radius: var(--border-radius);
 
 	background-color: rgba(var(--color-primary-rgb), 0.5);
+}
+
+.accordions-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-large);
+	width: 70%;
 }
 
