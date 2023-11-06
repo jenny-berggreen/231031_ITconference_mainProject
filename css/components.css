@@ -44,4 +44,59 @@
 	border: none;
 }
 
-/* ------------------------------------ ------------------------------------ */
+/* ------------------------------------ accordion ------------------------------------ */
+
+.accordion {
+	overflow: hidden;
+	width: 100%;
+
+	border: solid 2px var(--color-accent-2);
+	border-radius: var(--border-radius);
+
+	background-color: var(--color-primary);
+	
+}
+
+.accordion__button {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	width: 100%;
+	padding: var(--spacing-x-small);
+
+	color: var(--color-foreground);
+	font-size: var(--font-size-desktop-h4);
+}
+
+.accordion__button::before {
+	content: '';
+	display: inline-block;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: url(../assets/images/arrow.png) no-repeat bottom;
+	background-size: contain;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.accordion--expanded .accordion__button::before,
+.accordion--expanded-hover .accordion__button::before {
+	transform: rotate(180deg);
+}
+
+.accordion__content {
+	display: none;
+	padding: var(--spacing-small);
+}
+
+.accordion--hover .accordion__button,
+.accordion--expanded-hover .accordion__button,
+.component-state--interactive .accordion__button:hover {
+	background-color: var(--color-secondary);
+}
+
+.accordion--expanded .accordion__content,
+.accordion--expanded-hover .accordion__content {
+	display: block;
+}
