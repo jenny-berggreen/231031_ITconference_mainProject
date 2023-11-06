@@ -88,6 +88,7 @@
 .accordion__content {
 	display: none;
 	padding: var(--spacing-small);
+	font-size: 22px;
 }
 
 .accordion--hover .accordion__button,
