@@ -75,16 +75,25 @@ header {
 
 header img {
 	width: 100%;
-	opacity: 0.4;
+	opacity: 0.3;
 }
 
 .header__content {
 	position: absolute;
-	width: 90%;
-	top: 50%;
+	bottom: var(--spacing-medium);
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
 	z-index: 1;
+
+	width: 90%;
+	height: 60%;
+	
 	text-align: center;
 }
 
@@ -92,6 +101,9 @@ header img {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
 }
 
 .header__content__headlines__timeAndPlace-container {
@@ -104,5 +116,14 @@ header img {
 .header__content__keyPoints-container {
 	display: flex;
 	flex-direction: row;
-	
+	align-items: center;
+	gap: var(--spacing-large);
+
+	height: 13%;
+}
+
+.keyPoints__divider-line {
+	width: 5px;
+	height: 100%;
+	background-color: var(--color-accent-2);
 }
