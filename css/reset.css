@@ -23,16 +23,20 @@ button {
 
 h1 {
 	font-size: var(--font-size-desktop-h1);
+	font-family: 'Inter-Bold';
 }
 
 h2 {
 	font-size: var(--font-size-desktop-h2);
+	font-family: 'Inter-Bold';
 }
 
 h3 {
 	font-size: var(--font-size-desktop-h3);
+	font-family: 'Inter-Bold';
 }
 
 h4 {
 	font-size: var(--font-size-desktop-h4);
+	font-family: 'Inter-Bold';
 }
