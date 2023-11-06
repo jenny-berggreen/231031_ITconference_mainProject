@@ -8,14 +8,14 @@
 
 }
 
-.register-button__filled--hover {
+.register-button__filled:hover {
 	background-color: var(--color-accent-1);
 	color: var(--color-foreground);
 }
 
-.register-button__filled--active {
+.register-button__filled:active {
 	background-color: var(--color-secondary);
 	color: var(--color-foreground);
 }
 
-/* ------------------------------------ register button border ------------------------------------ */
+/* ------------------------------------ ------------------------------------ */
