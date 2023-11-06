@@ -4,6 +4,24 @@ body {
 	color: var(--color-foreground);
 }
 
+/* ------------------------------------ text styles ------------------------------------ */
+
+.text-color--blue {
+	color: var(--color-accent-2);
+}
+
+.text-color--pink {
+	color: var(--color-accent-1);
+}
+
+.text-color--white {
+	color: var(--color-foreground);
+}
+
+.text-weight--bold {
+	font-family: 'Inter-Bold';
+}
+
 /* ------------------------------------ nav ------------------------------------ */
 nav {
 	position: fixed;
@@ -26,10 +44,6 @@ nav {
 .logo span {
 	font-family: 'Inter-Bold';
 	font-size: var(--font-size-desktop-h3);
-}
-
-.logo--blue {
-	color: var(--color-accent-2);
 }
 
 .nav__elements {
@@ -92,7 +106,7 @@ header img {
 	z-index: 1;
 
 	width: 90%;
-	height: 60%;
+	height: 55%;
 	
 	text-align: center;
 }
