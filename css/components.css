@@ -1,19 +1,23 @@
 /* ------------------------------------ register button filled ------------------------------------ */
 
-.register-button__filled {
+.register-button {
 	width: 220px;
 	height: 55px;
 	border-radius: var(--border-radius);
+}
+
+.register-button--filled {
+	
 	background-color: var(--color-accent-2);
 
 }
 
-.register-button__filled:hover {
+.register-button--filled:hover {
 	background-color: var(--color-accent-1);
 	color: var(--color-foreground);
 }
 
-.register-button__filled:active {
+.register-button--filled:active {
 	background-color: var(--color-secondary);
 	color: var(--color-foreground);
 }
