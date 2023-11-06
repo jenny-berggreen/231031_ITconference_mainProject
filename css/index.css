@@ -1,10 +1,13 @@
 body {
+	position: relative;
 	background-image: linear-gradient(var(--color-primary), var(--color-secondary), var(--color-accent-1));
 	color: var(--color-foreground);
 }
 
 /* ------------------------------------ nav ------------------------------------ */
 nav {
+	position: fixed;
+
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -16,6 +19,8 @@ nav {
 	padding-right: var(--spacing-larger);
 
 	background-color: var(--color-primary);
+
+	z-index: 2;
 }
 
 .logo span {
@@ -27,7 +32,7 @@ nav {
 	color: var(--color-accent-2);
 }
 
-.nav-elements {
+.nav__elements {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -35,14 +40,14 @@ nav {
 	width: 40%;
 }
 
-.nav-element {
+.nav__element {
 	position: relative;
 	font-family: 'Inter-SemiBold';
 	font-size: var(--font-size-desktop-base);
 	cursor: pointer;
 }
 
-.nav-elements span::after {
+.nav__elements span::after {
 	content: "";
 	position: absolute;
 	left: 0; 
@@ -52,8 +57,52 @@ nav {
 	border-radius: var(--border-radius-max);
 	background-color: transparent;
 	transition: background-color 0.3s;
-  }
+}
   
-  .nav-elements span:hover::after {
+.nav__elements span:hover::after {
 	background-color: var(--color-accent-1);
-  }
+}
+
+/* ------------------------------------ header ------------------------------------ */
+
+header {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--color-background);
+	overflow: hidden;
+}
+
+header img {
+	width: 100%;
+	opacity: 0.4;
+}
+
+.header__content {
+	position: absolute;
+	width: 90%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	text-align: center;
+}
+
+.header__content__headlines-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.header__content__headlines__timeAndPlace-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-medium);
+	text-align: start;
+}
+
+.header__content__keyPoints-container {
+	display: flex;
+	flex-direction: row;
+	
+}
