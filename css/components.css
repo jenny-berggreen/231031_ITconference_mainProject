@@ -80,8 +80,7 @@
 	margin-right: 1rem;
 }
 
-.accordion--expanded .accordion__button::before,
-.accordion--expanded-hover .accordion__button::before {
+.accordion--expanded .accordion__button::before {
 	transform: rotate(180deg);
 }
 
@@ -91,13 +90,10 @@
 	font-size: 22px;
 }
 
-.accordion--hover .accordion__button,
-.accordion--expanded-hover .accordion__button,
-.component-state--interactive .accordion__button:hover {
+.accordion__button:hover {
 	background-color: var(--color-secondary);
 }
 
-.accordion--expanded .accordion__content,
-.accordion--expanded-hover .accordion__content {
+.accordion--expanded .accordion__content {
 	display: block;
 }
