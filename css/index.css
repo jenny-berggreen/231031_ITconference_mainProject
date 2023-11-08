@@ -287,5 +287,14 @@ main {
 	background-color: var(--color-accent-2);
 }
 
+.slideshow__control-button:hover {
+	background-color: #00b3db;
+}
+
+.slideshow__control-button img {
+	width: 60%;
+	height: 50%;
+}
+
 
 
