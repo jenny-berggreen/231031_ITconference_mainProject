@@ -36,6 +36,7 @@ accordions.forEach((accordion) => {
 const slideshow = document.querySelector('.slideshow');
 const slides = slideshow.querySelectorAll('.slideshow__slide');
 const controls = slideshow.querySelectorAll('.slideshow__control-button');
+const dots = slideshow.querySelectorAll('.slideshow__dot');
 
 let index = 0;
 const totalSlides = slides.length;
@@ -53,7 +54,12 @@ const goToPreviousSlide = () => {
 		slide.classList.remove('slideshow__slide--visible');
 	});
 
+	dots.forEach(dot => {
+		dot.classList.remove('slideshow__dot--active');
+	});
+
 	slides[index].classList.add('slideshow__slide--visible');
+	dots[index].classList.add('slideshow__dot--active');
 };
 
 const goToNextSlide = () => {
@@ -69,7 +75,12 @@ const goToNextSlide = () => {
 		slide.classList.remove('slideshow__slide--visible');
 	});
 
+	dots.forEach(dot => {
+		dot.classList.remove('slideshow__dot--active');
+	});
+
 	slides[index].classList.add('slideshow__slide--visible');
+	dots[index].classList.add('slideshow__dot--active');
 };
 
 const changeSlide = (event) => {
