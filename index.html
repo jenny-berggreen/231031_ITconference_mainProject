@@ -162,49 +162,65 @@
 			</section>
 
 			<section class="register-section flex-center">
-				<h2>Register for the tech conference of the year!</h2>
+				<h3>Register for the tech conference of the year!</h3>
 
-				<div class="form-container">
+				<form class="form-container direction-column">
 					<div class="form__name-container direction-row">
-						<form class="form__label">
+						<label class="form__label">
 							<span>First name</span>
-							<input type="text" required>
-						</form>
-						<form class="form__label">
+							<input class="form__input-text" type="text" required>
+						</label>
+						<label class="form__label">
 							<span>Last name</span>
-							<input type="text" required>
-						</form>
+							<input class="form__input-text" type="text" required>
+						</label>
 					</div>
-					<form class="form__label">
+					<label class="form__label">
 						<span>E-mail</span>
-						<input type="text" required>
-					</form>
-					<form class="form__label">
+						<input class="form__input-text" type="text" required>
+					</label>
+					<label class="form__label">
 						<span>Adress</span>
-						<input type="text" required>
-					</form>
+						<input class="form__input-text" type="text" required>
+					</label>
 					<label class="form__label">
 						<span>Gender</span>
 						<div class="form__radio-buttons-container direction-row">
-							<div class="form__radio-button">
-								<span>Female</span>
-								<input class="form__input-radio" type="radio" value="female" required>
+							<div class="radiobutton">
+								<div class="radiobutton__button radiobutton__button--chosen">
+									<div class="radiobutton__button__dot"></div>
+								</div>
+								<span class="radiobutton__label">Female</span>
 							</div>
-							<div class="form__radio-button">
-								<span>Mann</span>
-								<input class="form__input-radio" type="radio" value="male" required>
+							<div class="radiobutton">
+								<div class="radiobutton__button">
+									<div class="radiobutton__button__dot"></div>
+								</div>
+								<span class="radiobutton__label">Male</span>
 							</div>
-							<div class="form__radio-button">
-								<span>Other</span>
-								<input class="form__input-radio" type="radio"value="other" required>
+							<div class="radiobutton">
+								<div class="radiobutton__button">
+									<div class="radiobutton__button__dot"></div>
+								</div>
+								<span class="radiobutton__label">Other</span>
 							</div>
 						</div>
 					</label>
-				</div>
+				</form>
 
 				<div class="choose-pass-container flex-center">
 					<h3>Choose a conference pass</h3>
 					<div class="conference-pass-container direction-row">
+						<div class="conference-pass">
+							<span class="conference-pass__title">1-Day Pass</span>
+							<span class="conference-pass__price">$199</span>
+							<p class="conference-pass__description">Description</p>
+						</div>
+						<div class="conference-pass">
+							<span class="conference-pass__title">1-Day Pass</span>
+							<span class="conference-pass__price">$199</span>
+							<p class="conference-pass__description">Description</p>
+						</div>
 						<div class="conference-pass">
 							<span class="conference-pass__title">1-Day Pass</span>
 							<span class="conference-pass__price">$199</span>
