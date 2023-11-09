@@ -406,13 +406,3 @@ main {
 .form__radio-buttons-container {
 	gap: var(--spacing-medium);
 }
-
-.form__radio-button {
-	gap: var(--spacing-x-small);
-}
-
-.form__input-radio {
-	width: 22px;
-	height: 22px;
-	background-color: none;
-}
