@@ -33,7 +33,7 @@ accordions.forEach((accordion) => {
 
 // ------------------------- slideshow -------------------------
 
-const slideshow = document.querySelector('.slideshow');
+const slideshow = document.querySelector('.slideshow-container');
 const slides = slideshow.querySelectorAll('.slideshow__slide');
 const controls = slideshow.querySelectorAll('.slideshow__control-button');
 const dots = slideshow.querySelectorAll('.slideshow__dot');
@@ -98,3 +98,38 @@ const changeSlide = (event) => {
 controls.forEach(button => {
 	button.addEventListener('click', changeSlide);
 })
+
+// ------------------------- radio button -------------------------
+
+const radiobuttons = document.querySelectorAll('.radiobutton__button');
+
+function toggleRadiobuttonChosenClass(event) {
+	// Remove "chosen" class from all radio buttons
+	radiobuttons.forEach(button => {
+	  button.classList.remove('radiobutton__button--chosen');
+	});
+  
+	// Add "chosen" class to the clicked radio button
+	const clickedButton = event.currentTarget;
+	clickedButton.classList.add('radiobutton__button--chosen');
+	clickedButton.classList.remove('radiobutton__button--hover'); // don´t display hover effect right after click
+}
+
+function addRadiobuttonHoverClass(event) {
+	const hoveredButton = event.currentTarget;
+	if (!hoveredButton.classList.contains('radiobutton__button--chosen')) { // hovering over non chosen button
+	  hoveredButton.classList.add('radiobutton__button--hover');			// display darker border color
+	}
+  }
+  
+  function removeRadiobuttonHoverClass(event) {
+	const hoveredButton = event.currentTarget;
+	hoveredButton.classList.remove('radiobutton__button--hover'); // display normal border color when mouse leaves button
+  }
+
+// Attach click event listener to each radio button
+radiobuttons.forEach(button => {
+	button.addEventListener('click', toggleRadiobuttonChosenClass);
+	button.addEventListener('mouseover', addRadiobuttonHoverClass);
+	button.addEventListener('mouseleave', removeRadiobuttonHoverClass);
+});
