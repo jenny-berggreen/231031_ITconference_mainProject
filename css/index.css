@@ -319,7 +319,7 @@ main {
 	padding: var(--spacing-medium);
 
 	border-radius: var(--border-radius);
-	background-color: var(--color-primary);
+	background-color: rgba(var(--color-primary-rgb), 0.5);
 }
 
 .speaker-card__image-container {
