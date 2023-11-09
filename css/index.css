@@ -179,8 +179,6 @@ main {
 	gap: var(--spacing-larger);
 
 	width: 80%;
-	
-	border: solid 1px red;
 }
 
 .join-us-section h3 {
@@ -199,7 +197,6 @@ main {
 	border-radius: var(--border-radius);
 
 	background-color: rgba(var(--color-primary-rgb), 0.5);
-	border: solid 1px red;
 }
 
 .accordions-container {
@@ -216,7 +213,6 @@ main {
 	gap: 5rem;
 
 	width: 100%;
-	border: solid 1px red;
 }
 
 .slideshow-container {
@@ -304,16 +300,12 @@ main {
 	flex-direction: column;
 	width: 80%;
 	gap: var(--spacing-larger);
-
-	border: solid 1px red;
 }
 
 .speakers-container {
 	width: 100%;
 	flex-wrap: wrap;
 	gap: var(--spacing-large);
-
-	border: solid 1px red;
 }
 
 .speaker-card {
@@ -333,7 +325,6 @@ main {
 .speaker-card__image-container {
 	width: 60%;
 	height: 160px;
-	border: solid 1px red;
 	object-fit: cover;
 	
 }
@@ -372,9 +363,6 @@ main {
 .form-container {
 	gap: var(--spacing-large);
 	width: 60%;
-	
-
-	font-family: var(--font-size-desktop-base);
 }
 
 .form__name-container {
@@ -413,4 +401,43 @@ main {
 
 .form__radio-buttons-container {
 	gap: var(--spacing-medium);
+}
+
+.choose-pass-container {
+	gap: var(--spacing-larger);
+	width: 80%;
+}
+
+.conference-pass-container {
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.conference-pass {
+	justify-content: flex-start;
+	gap: var(--spacing-large);
+
+	padding: var(--spacing-medium);
+	border-radius: var(--border-radius);
+
+	width: 28%;
+	height: 22rem;
+
+	background-color: var(--color-secondary);
+}
+
+.conference-pass__title {
+	font-family: 'Inter-SemiBold';
+	color: var(--color-accent-2);
+}
+
+.conference-pass__prize {
+	font-size: var(--font-size-desktop-h2);
+	font-family: 'Inter-Bold';
+}
+
+.conference-pass__description {
+	border-top: solid 2px var(--color-accent-1);
+	padding-top: var(--spacing-small);
+	font-size: 18px;
 }
