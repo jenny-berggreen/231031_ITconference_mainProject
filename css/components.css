@@ -97,3 +97,44 @@
 .accordion--expanded .accordion__content {
 	display: block;
 }
+
+/* ------------------------------------ radio button ------------------------------------ */
+
+.radiobutton {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--spacing-x-small);
+}
+
+.radiobutton__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 35px;
+	height: 35px;
+
+	border: solid 3px var(--color-accent-2);
+	border-radius: var(--border-radius-max);
+}
+
+.radiobutton__button__dot {
+	display: none;
+
+	width: 70%;
+	height: 70%;
+
+	border-radius: var(--border-radius-max);
+
+	background-color: var(--color-accent-2);
+}
+
+.radiobutton__button--chosen .radiobutton__button__dot {
+	display: block;
+}
+
+.radiobutton__button--hover {
+	cursor: pointer;
+	border-color: var(--color-accent-1);
+}
