@@ -426,6 +426,19 @@ main {
 	background-color: var(--color-secondary);
 }
 
+.conference-pass--hover {
+	cursor: pointer;
+	box-shadow: 0 0 18px 5px var(--color-accent-1);
+}
+
+.conference-pass--chosen {
+	box-shadow: 0 0 18px 5px var(--color-accent-1);
+}
+
+.conference-pass--inactive {
+	background-color: rgba(0, 0, 0, 0.437);
+}
+
 .conference-pass__title {
 	font-family: 'Inter-SemiBold';
 	color: var(--color-accent-2);
