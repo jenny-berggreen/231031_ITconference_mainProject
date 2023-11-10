@@ -133,3 +133,45 @@ radiobuttons.forEach(button => {
 	button.addEventListener('mouseover', addRadiobuttonHoverClass);
 	button.addEventListener('mouseleave', removeRadiobuttonHoverClass);
 });
+
+// ------------------------- conference pass -------------------------
+
+const conferencePasses = document.querySelectorAll('.conference-pass');
+
+function handleClickOnConferencePass(event) {
+	// Remove "chosen" and "inactive" classes from all conference passes
+	conferencePasses.forEach(pass => {
+	  pass.classList.remove('conference-pass--chosen', 'conference-pass--inactive');
+	});
+  
+	// Add "chosen" class to the clicked conference pass
+	const clickedPass = event.currentTarget;
+	clickedPass.classList.add('conference-pass--chosen');
+	clickedPass.classList.remove('conference-pass--hover'); // don´t display hover effect right after click
+
+	// Add "inactive" class to the non-clicked passes
+	conferencePasses.forEach(pass => {
+		if (pass !== clickedPass) {
+		  pass.classList.add('conference-pass--inactive');
+		}
+	  });
+}
+
+function addConferencePassHoverClass(event) {
+	const hoveredPass = event.currentTarget;
+	if (!hoveredPass.classList.contains('conference-pass--chosen')) { // hovering over non chosen pass
+	  hoveredPass.classList.add('conference-pass--hover');			// display box shadow
+	}
+  }
+  
+  function removeConferencePassHoverClass(event) {
+	const hoveredPass = event.currentTarget;
+	hoveredPass.classList.remove('conference-pass--hover'); // display default pass style when mouse leaves button
+  }
+
+// Attach click event listener to each conference pass
+conferencePasses.forEach(pass => {
+	pass.addEventListener('click', handleClickOnConferencePass);
+	pass.addEventListener('mouseover', addConferencePassHoverClass);
+	pass.addEventListener('mouseleave', removeConferencePassHoverClass);
+});
