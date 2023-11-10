@@ -431,7 +431,7 @@ main {
 	color: var(--color-accent-2);
 }
 
-.conference-pass__prize {
+.conference-pass__price {
 	font-size: var(--font-size-desktop-h2);
 	font-family: 'Inter-Bold';
 }
