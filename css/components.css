@@ -106,6 +106,16 @@
 	border: solid 2px var(--color-accent-2);
 	border-radius: var(--border-radius-max);
 	padding: var(--spacing-x-small);
+	font-family: 'Inter-SemiBold';
+}
+
+.filter-button--hover {
+	border-color: var(--color-accent-1);
+}
+
+.filter-button--chosen {
+	border-color: var(--color-accent-1);
+	background-color: var(--color-accent-1);
 }
 
 /* ------------------------------------ radio button ------------------------------------ */
