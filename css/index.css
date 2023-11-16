@@ -210,9 +210,14 @@ main {
 
 .slideshow-section {
 	flex-direction: column;
-	gap: 5rem;
+	gap: 3rem;
 
 	width: 100%;
+}
+
+.filter-buttons-container {
+	gap: 1em;;
+	margin-top: -10px;
 }
 
 .slideshow-container {
@@ -349,7 +354,7 @@ main {
 
 .register-section {
 	flex-direction: column;
-	gap: var(--spacing-larger);
+	gap: var(--spacing-largest);
 
 	width: 100%;
 

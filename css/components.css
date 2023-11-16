@@ -98,6 +98,16 @@
 	display: block;
 }
 
+/* ------------------------------------ filter button ------------------------------------ */
+
+.filter-button {
+	text-align: center;
+	color: white;
+	border: solid 2px var(--color-accent-2);
+	border-radius: var(--border-radius-max);
+	padding: var(--spacing-x-small);
+}
+
 /* ------------------------------------ radio button ------------------------------------ */
 
 .radiobutton {
