@@ -103,8 +103,26 @@ filterButtons.forEach(filterButton => {
     const currentButton = event.currentTarget;
     const currentButtonFilterBy = currentButton.dataset.filterBy;
 
+	// Remove 'filter-button--chosen' from all buttons
+    filterButtons.forEach(button => {
+		button.classList.remove('filter-button--chosen');
+	  });
+  
+	// Add 'filter-button--chosen' to the clicked button
+	if (currentButtonFilterBy !== '*') {
+		currentButton.classList.add('filter-button--chosen');
+	}
+
     const filteredSlides = Array.from(originalSlides).filter(slide => {
-		return currentButtonFilterBy === '*' || slide.dataset.year === currentButtonFilterBy;
+		if (currentButtonFilterBy === '*') {
+			filterButtons.forEach(button => {
+				button.classList.remove('filter-button--chosen');
+			});
+			
+			return true;
+		} else {
+			return slide.dataset.year === currentButtonFilterBy;
+		}
 	  });
 	  
 
