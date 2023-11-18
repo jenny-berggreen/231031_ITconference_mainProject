@@ -230,23 +230,9 @@ main {
 	width: 100%;
 }
 
-.slideshow__dots {
+.slideshow__counter {
 	position: absolute;
 	top: -30px;
-	display: flex;
-	flex-direction: row;
-	gap: var(--spacing-x-small);
-}
-
-.slideshow__dot {
-	width: 20px;
-	height: 20px;
-	border-radius: var(--border-radius-max);
-	background-color: var(--color-secondary);
-}
-
-.slideshow__dot--active {
-	background-color: var(--color-accent-1);
 }
 
 .slideshow__slides {
