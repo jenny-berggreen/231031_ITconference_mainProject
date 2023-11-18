@@ -72,22 +72,16 @@
 			<section class="slideshow-section flex-center">
 				<h3>Take a look at previous ITconferences!</h3>
 				<div class="filter-buttons-container direction-row">
-					<button class="filter-button">2020</button>
-					<button class="filter-button">2021</button>
-					<button class="filter-button">2022</button>
+					<button class="filter-button" data-filter-by="2020">2020</button>
+					<button class="filter-button" data-filter-by="2021">2021</button>
+					<button class="filter-button filter-button--chosen" data-filter-by="2022">2022</button>
 				</div>
 				<div class="slideshow-container">
-					<div class="slideshow__dots">
-						<button class="slideshow__dot slideshow__dot--active"></button>
-						<button class="slideshow__dot"></button>
-						<button class="slideshow__dot"></button>
-						<button class="slideshow__dot"></button>
-						<button class="slideshow__dot"></button>
-					</div>
+					
 
 					<div class="slideshow__slides">
 						<!--2020-->
-						<figure class="slideshow__slide slideshow__slide--visible" data-year="2020">
+						<figure class="slideshow__slide" data-year="2020">
 							<img class="slideshow__img" src="./assets/images/2020slide1.jpeg" alt=""> <!-- https://www.alphagamma.eu/entrepreneurship/it-tech-conferences-europe-2022/ -->
 						</figure>
 						<figure class="slideshow__slide" data-year="2020">
