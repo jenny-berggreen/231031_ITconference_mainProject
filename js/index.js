@@ -34,70 +34,113 @@ accordions.forEach((accordion) => {
 // ------------------------- slideshow -------------------------
 
 const slideshow = document.querySelector('.slideshow-container');
-const slides = slideshow.querySelectorAll('.slideshow__slide');
+const slideshowSlides = slideshow.querySelector('.slideshow__slides');
+const originalSlides = slideshow.querySelectorAll('.slideshow__slide'); // Initial slides
+let slides = [...originalSlides]; // Shallow copy for manipulation
+const filterButtons = document.querySelectorAll('.filter-button');
 const controls = slideshow.querySelectorAll('.slideshow__control-button');
-const dots = slideshow.querySelectorAll('.slideshow__dot');
+const counter = slideshow.querySelector('.slideshow__counter');
 
 let index = 0;
-const totalSlides = slides.length;
-const lastIndex = slides.length - 1;
+let totalSlides = slides.length;
+let lastIndex = totalSlides - 1;
 
 const goToPreviousSlide = () => {
-	if (index === 0) {
-		index = lastIndex;
-	} else {
-		index = index - 1;
-	}
+  if (index === 0) {
+    index = lastIndex;
+  } else {
+    index = index - 1;
+  }
 
-	// update classes
-	slides.forEach(slide => {
-		slide.classList.remove('slideshow__slide--visible');
-	});
+  // update classes
+  slides.forEach(slide => {
+    slide.classList.remove('slideshow__slide--visible');
+  });
 
-	dots.forEach(dot => {
-		dot.classList.remove('slideshow__dot--active');
-	});
-
-	slides[index].classList.add('slideshow__slide--visible');
-	dots[index].classList.add('slideshow__dot--active');
+  slides[index].classList.add('slideshow__slide--visible');
 };
 
 const goToNextSlide = () => {
-	// increase index
-	if (index < lastIndex) {
-		index = index + 1;
-	} else {
-		index = 0;
-	}
+  // increase index
+  if (index < lastIndex) {
+    index = index + 1;
+  } else {
+    index = 0;
+  }
 
-	// update classes
-	slides.forEach(slide => {
-		slide.classList.remove('slideshow__slide--visible');
-	});
+  // update classes
+  slides.forEach(slide => {
+    slide.classList.remove('slideshow__slide--visible');
+  });
 
-	dots.forEach(dot => {
-		dot.classList.remove('slideshow__dot--active');
-	});
-
-	slides[index].classList.add('slideshow__slide--visible');
-	dots[index].classList.add('slideshow__dot--active');
+  slides[index].classList.add('slideshow__slide--visible');
 };
 
+const updateCounter = () => {
+  counter.textContent = `${index + 1} of ${totalSlides}`;
+}
+
 const changeSlide = (event) => {
-	const button = event.currentTarget;
+  const button = event.currentTarget;
 
-	if (button.dataset.direction === 'previous') {
-		goToPreviousSlide();
-	}
+  if (button.dataset.direction === 'previous') {
+    goToPreviousSlide();
+  }
 
-	if (button.dataset.direction === 'next') {
-		goToNextSlide();
-	}
+  if (button.dataset.direction === 'next') {
+    goToNextSlide();
+  }
+
+  updateCounter();
 }
 
 controls.forEach(button => {
-	button.addEventListener('click', changeSlide);
-})
+  button.addEventListener('click', changeSlide);
+});
+
+filterButtons.forEach(filterButton => {
+  const filterSlides = (event) => {
+    const currentButton = event.currentTarget;
+    const currentButtonFilterBy = currentButton.dataset.filterBy;
+
+    const filteredSlides = Array.from(originalSlides).filter(slide => {
+		return currentButtonFilterBy === '*' || slide.dataset.year === currentButtonFilterBy;
+	  });
+	  
+
+    slideshowSlides.innerHTML = ''; // empty slideshow container
+
+    filteredSlides.forEach(slide => {
+      slideshowSlides.appendChild(slide); // append only the filtered slides to slideshow container
+    });
+    console.log(filteredSlides);
+    console.log(originalSlides);
+
+    if (filteredSlides.length > 0) {
+      index = 0; // reset index to the first visible slide
+      totalSlides = filteredSlides.length; // update totalSlides
+      lastIndex = totalSlides - 1; // update lastIndex
+      updateCounter();
+      filteredSlides[0].classList.add('slideshow__slide--visible'); // make first slide visible
+    }
+  };
+
+  const addFilterButtonHoverClass = () => {
+	filterButton.classList.add('filter-button--hover');
+  }
+
+  const removeFilterButtonHoverClass = () => {
+	filterButton.classList.remove('filter-button--hover');
+  }
+
+  filterButton.addEventListener('click', filterSlides);
+  filterButton.addEventListener('mouseover', addFilterButtonHoverClass);
+  filterButton.addEventListener('mouseleave', removeFilterButtonHoverClass);
+});
+
+updateCounter();
+
+
 
 // ------------------------- radio button -------------------------
 
