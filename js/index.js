@@ -293,3 +293,39 @@ conferencePasses.forEach(pass => {
 	pass.addEventListener('mouseover', addConferencePassHoverClass);
 	pass.addEventListener('mouseleave', removeConferencePassHoverClass);
 });
+
+// ------------------------- register form -------------------------
+
+const registerSection = document.querySelector('.register-section');
+const registerButton = registerSection.querySelector('.register-button');
+const form = registerSection.querySelector('form');
+const radioButtons = form.querySelectorAll('.radiobutton__button');
+const toast = document.querySelector('.toast');
+
+const register = () => {
+
+    // clear form inputs
+    form.reset();
+
+    // set radio buttons to default
+    radioButtons.forEach(radioButton => {
+        radioButton.classList.remove('radiobutton__button--chosen');
+    });
+    radioButtons[0].classList.add('radiobutton__button--chosen');
+
+	// set conference passes to default
+	conferencePasses.forEach(conferencePass => {
+		conferencePass.classList.remove('conference-pass--chosen');
+		conferencePass.classList.remove('conference-pass--inactive');
+	})
+
+    // display toast for 5 seconds
+    toast.style.display = 'flex';
+    toast.style.backgroundColor = 'rgb(0, 146, 104)';
+    toast.innerHTML = "You are registered to the ITconference 2023!";
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 5000);
+}
+
+registerButton.addEventListener('click', register);

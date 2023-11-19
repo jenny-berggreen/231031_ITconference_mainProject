@@ -34,7 +34,10 @@
 
 .toast {
 	display: none;
-	
+
+	align-items: center;
+	justify-content: center;
+
 	position: fixed;
 	bottom: 20px;
 	margin: auto;
