@@ -1,4 +1,6 @@
 
+// ------------------------- nav bar -------------------------
+
 const navBar = document.querySelector('nav');
 
 window.addEventListener('scroll', function() {
@@ -16,6 +18,34 @@ const displayNavColor = () => {
 const hideNavColor = () => {
   navBar.style.backgroundColor = 'transparent';
 };
+
+// ------------------------- scrolling -------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+    // function to scroll to a specific section
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // navigation links
+    document.querySelector('.nav__element:nth-child(1)').addEventListener('click', function () {
+        scrollToSection('about-section');
+    });
+
+    document.querySelector('.nav__element:nth-child(2)').addEventListener('click', function () {
+        scrollToSection('speakers-section');
+    });
+
+	// register buttons
+    document.querySelector('.nav__element.register-button').addEventListener('click', function () {
+        scrollToSection('register-section');
+    }); 
+	
+    document.querySelector('.join-us-section .register-button').addEventListener('click', function () {
+        scrollToSection('register-section');
+    });
+});
+
 
 // ------------------------- accordion -------------------------
 
@@ -35,8 +65,8 @@ accordions.forEach((accordion) => {
 
 const slideshow = document.querySelector('.slideshow-container');
 const slideshowSlides = slideshow.querySelector('.slideshow__slides');
-const originalSlides = slideshow.querySelectorAll('.slideshow__slide'); // Initial slides
-let slides = [...originalSlides]; // Shallow copy for manipulation
+const originalSlides = slideshow.querySelectorAll('.slideshow__slide'); // initial slides
+let slides = [...originalSlides]; // shallow copy for manipulation
 const filterButtons = document.querySelectorAll('.filter-button');
 const controls = slideshow.querySelectorAll('.slideshow__control-button');
 const counter = slideshow.querySelector('.slideshow__counter');
@@ -103,12 +133,12 @@ filterButtons.forEach(filterButton => {
     const currentButton = event.currentTarget;
     const currentButtonFilterBy = currentButton.dataset.filterBy;
 
-	// Remove 'filter-button--chosen' from all buttons
+	// remove 'filter-button--chosen' from all buttons
     filterButtons.forEach(button => {
 		button.classList.remove('filter-button--chosen');
 	  });
   
-	// Add 'filter-button--chosen' to the clicked button
+	// add 'filter-button--chosen' to the clicked button
 	if (currentButtonFilterBy !== '*') {
 		currentButton.classList.add('filter-button--chosen');
 	}
