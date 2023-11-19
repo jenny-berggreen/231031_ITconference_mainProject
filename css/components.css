@@ -30,6 +30,27 @@
 	display: block;
 }
 
+/* ------------------------------------ toast ------------------------------------ */
+
+.toast {
+	display: none;
+	
+	position: fixed;
+	bottom: 20px;
+	margin: auto;
+
+	height: 50px;
+	padding: 0 20px;
+
+	border-radius: var(--border-radius);
+
+	z-index: 2;
+
+	color: var(--color-foreground);
+	background-color: rgb(0, 146, 104);
+}
+
+
 /* ------------------------------------ register button ------------------------------------ */
 
 .register-button {
