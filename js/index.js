@@ -299,33 +299,54 @@ conferencePasses.forEach(pass => {
 const registerSection = document.querySelector('.register-section');
 const registerButton = registerSection.querySelector('.register-button');
 const form = registerSection.querySelector('form');
+const inputFields = form.querySelectorAll('.form__input-text');
 const radioButtons = form.querySelectorAll('.radiobutton__button');
 const toast = document.querySelector('.toast');
 
+console.log(inputFields);
 const register = () => {
+	let isEmpty = false;
 
-    // clear form inputs
-    form.reset();
+	// check if inputs are empty
+	inputFields.forEach(input => {
+		if (input.value === "") {
+			isEmpty = true;
+		}
+	});
 
-    // set radio buttons to default
-    radioButtons.forEach(radioButton => {
-        radioButton.classList.remove('radiobutton__button--chosen');
-    });
-    radioButtons[0].classList.add('radiobutton__button--chosen');
+	if (isEmpty) {
+		// display toast for 5 seconds
+		toast.style.display = 'flex';
+		toast.style.backgroundColor = 'red';
+		toast.innerHTML = "Fill out the whole form and choose a conference pass";
+		setTimeout(() => {
+			toast.style.display = 'none';
+		}, 5000);
+	} else {
 
-	// set conference passes to default
-	conferencePasses.forEach(conferencePass => {
-		conferencePass.classList.remove('conference-pass--chosen');
-		conferencePass.classList.remove('conference-pass--inactive');
-	})
+		// clear form inputs
+		form.reset();
 
-    // display toast for 5 seconds
-    toast.style.display = 'flex';
-    toast.style.backgroundColor = 'rgb(0, 146, 104)';
-    toast.innerHTML = "You are registered to the ITconference 2023!";
-    setTimeout(() => {
-        toast.style.display = 'none';
-    }, 5000);
+		// set radio buttons to default
+		radioButtons.forEach(radioButton => {
+			radioButton.classList.remove('radiobutton__button--chosen');
+		});
+		radioButtons[0].classList.add('radiobutton__button--chosen');
+
+		// set conference passes to default
+		conferencePasses.forEach(conferencePass => {
+			conferencePass.classList.remove('conference-pass--chosen');
+			conferencePass.classList.remove('conference-pass--inactive');
+		});
+
+		// display toast for 5 seconds
+		toast.style.display = 'flex';
+		toast.style.backgroundColor = 'rgb(0, 146, 104)';
+		toast.innerHTML = "You are registered to the ITconference 2023!";
+		setTimeout(() => {
+			toast.style.display = 'none';
+		}, 5000);
+	}console.log(isEmpty);
 }
 
 registerButton.addEventListener('click', register);
