@@ -46,6 +46,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+const scrollToTopButton = document.querySelector('.scrollButton');
+
+	window.addEventListener('scroll', function() {
+		if (window.scrollY > 300) {
+			displayButton();
+		} else {
+			hideButton();
+		}
+	});
+
+	function displayButton() {
+	scrollToTopButton.classList.add('displayBlock');
+	}
+
+	function hideButton() {
+	scrollToTopButton.classList.remove('displayBlock');
+	}
+
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		})
+	}
+
+	scrollToTopButton.addEventListener('click', scrollToTop);
+
 
 // ------------------------- accordion -------------------------
 
