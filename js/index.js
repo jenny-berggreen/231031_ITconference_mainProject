@@ -91,10 +91,11 @@ accordions.forEach((accordion) => {
 // ------------------------- slideshow -------------------------
 
 const slideshow = document.querySelector('.slideshow-container');
-const slideshowSlides = slideshow.querySelector('.slideshow__slides');
-const originalSlides = slideshow.querySelectorAll('.slideshow__slide'); // initial slides
-let slides = [...originalSlides]; // shallow copy for manipulation
+const slidesContainer = slideshow.querySelector('.slideshow__slides');
+let slides = slideshow.querySelectorAll('.slideshow__slide'); // initial slides
+let filteredSlides = [];
 const filterButtons = document.querySelectorAll('.filter-button');
+const clearFilters = document.querySelector('#filter-button__clear');
 const controls = slideshow.querySelectorAll('.slideshow__control-button');
 const counter = slideshow.querySelector('.slideshow__counter');
 
@@ -109,33 +110,38 @@ const goToPreviousSlide = () => {
     index = index - 1;
   }
 
-  // update classes
-  slides.forEach(slide => {
-    slide.classList.remove('slideshow__slide--visible');
-  });
-
-  slides[index].classList.add('slideshow__slide--visible');
+  updateSlideVisibility();
 };
 
 const goToNextSlide = () => {
-  // increase index
   if (index < lastIndex) {
     index = index + 1;
   } else {
     index = 0;
   }
 
-  // update classes
+  updateSlideVisibility();
+};
+
+const updateSlideVisibility = () => {
   slides.forEach(slide => {
     slide.classList.remove('slideshow__slide--visible');
   });
 
-  slides[index].classList.add('slideshow__slide--visible');
+  filteredSlides.forEach(slide => {
+    slide.classList.remove('slideshow__slide--visible');
+  });
+
+  if (filteredSlides.length > 0) {
+    filteredSlides[index].classList.add('slideshow__slide--visible');
+  } else {
+    slides[index].classList.add('slideshow__slide--visible');
+  }
 };
 
 const updateCounter = () => {
   counter.textContent = `${index + 1} of ${totalSlides}`;
-}
+};
 
 const changeSlide = (event) => {
   const button = event.currentTarget;
@@ -149,7 +155,7 @@ const changeSlide = (event) => {
   }
 
   updateCounter();
-}
+};
 
 controls.forEach(button => {
   button.addEventListener('click', changeSlide);
@@ -157,56 +163,64 @@ controls.forEach(button => {
 
 filterButtons.forEach(filterButton => {
   const filterSlides = (event) => {
+	slides.forEach(slide => {
+		slide.classList.remove('slideshow__slide--visible');
+	  });
+	  
     const currentButton = event.currentTarget;
     const currentButtonFilterBy = currentButton.dataset.filterBy;
 
-	// remove 'filter-button--chosen' from all buttons
-    filterButtons.forEach(button => {
-		button.classList.remove('filter-button--chosen');
-	  });
-  
-	// add 'filter-button--chosen' to the clicked button
-	if (currentButtonFilterBy !== '*') {
-		currentButton.classList.add('filter-button--chosen');
-	}
+    filteredSlides = [...slides].filter(slide => {
+      if (currentButtonFilterBy === '*') {
+        return true;
+      } else {
+        return slide.dataset.year === currentButtonFilterBy;
+      }
+    });
 
-    const filteredSlides = Array.from(originalSlides).filter(slide => {
-		if (currentButtonFilterBy === '*') {
-			filterButtons.forEach(button => {
-				button.classList.remove('filter-button--chosen');
-			});
-			
-			return true;
-		} else {
-			return slide.dataset.year === currentButtonFilterBy;
-		}
-	  });
-	  
-
-    slideshowSlides.innerHTML = ''; // empty slideshow container
+    slidesContainer.innerHTML = '';
 
     filteredSlides.forEach(slide => {
-      slideshowSlides.appendChild(slide); // append only the filtered slides to slideshow container
+      slidesContainer.appendChild(slide);
     });
-    console.log(filteredSlides);
-    console.log(originalSlides);
 
     if (filteredSlides.length > 0) {
-      index = 0; // reset index to the first visible slide
-      totalSlides = filteredSlides.length; // update totalSlides
-      lastIndex = totalSlides - 1; // update lastIndex
-      updateCounter();
-      filteredSlides[0].classList.add('slideshow__slide--visible'); // make first slide visible
+      index = 0;
+      totalSlides = filteredSlides.length;
+      lastIndex = totalSlides - 1;
+      filteredSlides[index].classList.add('slideshow__slide--visible');
+      counter.textContent = `${index + 1} of ${totalSlides}`;
+    } else {
+      // If no filtered slides, show the original slides
+      slides.forEach(slide => {
+        slidesContainer.appendChild(slide);
+      });
+
+      totalSlides = slides.length;
+      lastIndex = totalSlides - 1;
+      slides[index].classList.add('slideshow__slide--visible');
+      counter.textContent = `${index + 1} of ${totalSlides}`;
     }
+
+    filterButtons.forEach(button => {
+      button.classList.remove('filter-button--chosen');
+    });
+
+    if (currentButtonFilterBy !== '*') {
+      currentButton.classList.add('filter-button--chosen');
+    }
+
+	console.log(slides);
+	console.log(filteredSlides);
   };
 
   const addFilterButtonHoverClass = () => {
-	filterButton.classList.add('filter-button--hover');
-  }
+    filterButton.classList.add('filter-button--hover');
+  };
 
   const removeFilterButtonHoverClass = () => {
-	filterButton.classList.remove('filter-button--hover');
-  }
+    filterButton.classList.remove('filter-button--hover');
+  };
 
   filterButton.addEventListener('click', filterSlides);
   filterButton.addEventListener('mouseover', addFilterButtonHoverClass);
@@ -214,6 +228,7 @@ filterButtons.forEach(filterButton => {
 });
 
 updateCounter();
+
 
 
 
@@ -303,7 +318,6 @@ const inputFields = form.querySelectorAll('.form__input-text');
 const radioButtons = form.querySelectorAll('.radiobutton__button');
 const toast = document.querySelector('.toast');
 
-console.log(inputFields);
 const register = () => {
 	let isEmpty = false;
 
@@ -346,7 +360,7 @@ const register = () => {
 		setTimeout(() => {
 			toast.style.display = 'none';
 		}, 5000);
-	}console.log(isEmpty);
+	}
 }
 
 registerButton.addEventListener('click', register);
