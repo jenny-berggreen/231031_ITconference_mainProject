@@ -132,9 +132,9 @@ const updateSlideVisibility = () => {
     slide.classList.remove('slideshow__slide--visible');
   });
 
-  if (filteredSlides.length > 0) {
+  if (filteredSlides.length > 0) { // if there are filtered slides, show them
     filteredSlides[index].classList.add('slideshow__slide--visible');
-  } else {
+  } else { // if there are no filtered slides, show the initial ones
     slides[index].classList.add('slideshow__slide--visible');
   }
 };
@@ -163,33 +163,37 @@ controls.forEach(button => {
 
 filterButtons.forEach(filterButton => {
   const filterSlides = (event) => {
+
+	// hide all intitial slides
 	slides.forEach(slide => {
 		slide.classList.remove('slideshow__slide--visible');
 	  });
-	  
+
     const currentButton = event.currentTarget;
     const currentButtonFilterBy = currentButton.dataset.filterBy;
 
+	// filter slides based on year
     filteredSlides = [...slides].filter(slide => {
       if (currentButtonFilterBy === '*') {
-        return true;
+        return true; // if clear button is clicked, do not filter
       } else {
         return slide.dataset.year === currentButtonFilterBy;
       }
     });
 
-    slidesContainer.innerHTML = '';
+    slidesContainer.innerHTML = ''; // empty slides container
 
+	// append filtered slides to container
     filteredSlides.forEach(slide => {
       slidesContainer.appendChild(slide);
     });
 
     if (filteredSlides.length > 0) {
-      index = 0;
+      index = 0; // reset index
       totalSlides = filteredSlides.length;
       lastIndex = totalSlides - 1;
-      filteredSlides[index].classList.add('slideshow__slide--visible');
-      counter.textContent = `${index + 1} of ${totalSlides}`;
+      filteredSlides[index].classList.add('slideshow__slide--visible'); // show first filtered slide
+      counter.textContent = `${index + 1} of ${totalSlides}`; // update counter text
     } else {
       // If no filtered slides, show the original slides
       slides.forEach(slide => {
@@ -209,9 +213,6 @@ filterButtons.forEach(filterButton => {
     if (currentButtonFilterBy !== '*') {
       currentButton.classList.add('filter-button--chosen');
     }
-
-	console.log(slides);
-	console.log(filteredSlides);
   };
 
   const addFilterButtonHoverClass = () => {
@@ -228,8 +229,6 @@ filterButtons.forEach(filterButton => {
 });
 
 updateCounter();
-
-
 
 
 // ------------------------- radio button -------------------------
