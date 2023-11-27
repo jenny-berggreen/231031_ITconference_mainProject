@@ -27,6 +27,10 @@
 		font-size: var(--font-size-tablet-base);
 	}
 
+	.logo span {
+		font-size: var(--font-size-tablet-h3);
+	}
+
 	.register-button {
 		font-size: var(--font-size-tablet-base);
 	}
@@ -98,6 +102,19 @@
 }
 
 @media screen and (max-width: 933px) {
+	.nav__elements {
+		display: none;
+	}
+
+	.hamburger-menu {
+		display: block;
+	}
+
+	.hamburger-menu img {
+		width: 4rem;
+		height: 2.5rem;
+	}
+
 	.headlines-container {
 		flex-direction: column;
 		align-items: start;

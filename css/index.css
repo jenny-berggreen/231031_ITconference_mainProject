@@ -60,6 +60,10 @@ nav {
 	z-index: 2;
 }
 
+.hamburger-menu {
+	display: none;
+}
+
 .logo span {
 	font-family: 'Inter-Bold';
 	font-size: var(--font-size-desktop-h3);
