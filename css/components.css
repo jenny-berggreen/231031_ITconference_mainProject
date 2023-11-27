@@ -59,12 +59,12 @@
 .register-button {
 	border-radius: var(--border-radius);
 	font-family: 'Inter-SemiBold';
-	padding: 0.8rem 1.5rem;
 }
 
 @media screen and (min-width: 1101px) {
 	.register-button {
 		font-size: var(--font-size-desktop-base);
+		padding: 0.8rem 1.5rem;
 	}
 }
 
@@ -134,28 +134,20 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.accordion__button {
-		font-size: var(--font-size-tablet-base);
+@media screen and (min-width: 769px) {
+	.accordion__button::before {
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 }
 
 .accordion__button::before {
 	content: '';
 	display: inline-block;
-	width: 2.5rem;
-	height: 2.5rem;
 	background: url(../assets/images/arrow.png) no-repeat bottom;
 	background-size: contain;
 	margin-left: 1rem;
 	margin-right: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-	.accordion__button::before {
-		width: 2rem;
-		height: 2rem;
-	}
 }
 
 .accordion--expanded .accordion__button::before {

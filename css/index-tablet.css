@@ -33,6 +33,7 @@
 
 	.register-button {
 		font-size: var(--font-size-tablet-base);
+		padding: 0.8rem 1.5rem;
 	}
 
 	.accordion__button {
@@ -143,6 +144,15 @@
 
 	.about-section {
 		width: 90%;
+	}
+
+	.accordion__button {
+		font-size: var(--font-size-tablet-base);
+	}
+
+	.accordion__button::before {
+		width: 2rem;
+		height: 2rem;
 	}
 
 	.form-container {

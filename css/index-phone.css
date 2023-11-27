@@ -14,4 +14,54 @@
 	h4 {
 		font-size: var(--font-size-phone-h4);
 	}
+
+	header {
+		height: 70%;
+	}
+
+	.headlines-container {
+		height: 14rem;
+		padding: 1rem;
+	}
+
+	.keypoints-container {
+		gap: var(--spacing-x-small);
+		height: 4rem;
+	}
+
+	.keypoints__divider-line {
+		width: 3px;
+	}
+
+	.register-button {
+		font-size: var(--font-size-phone-base);
+		padding: 0.7rem 1rem;
+	}
+
+	main {
+		margin-top: 5rem;
+		gap: 5rem;
+	}
+
+	.about-section {
+		gap: var(--spacing-medium);
+	}
+
+	.accordions-container {
+		width: 110%;
+		gap: var(--spacing-small);
+	}
+
+	.accordion__button {
+		font-size: var(--font-size-phone-h4);
+	}
+
+	.accordion__button::before {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	.accordion__content {
+		font-size: var(--font-size-phone-base);
+	}
 }
