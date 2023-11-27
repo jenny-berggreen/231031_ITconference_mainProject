@@ -60,7 +60,7 @@ nav {
 	z-index: 2;
 }
 
-.hamburger-menu {
+.hamburger-icon-container {
 	display: none;
 }
 
@@ -87,7 +87,7 @@ nav {
 	font-size: var(--font-size-tablet-h3);
 }
 
-.close-icon {
+.close-icon-container {
 	display: flex;
 	justify-content: end;
 
@@ -96,7 +96,7 @@ nav {
 	margin-bottom: var(--spacing-large);
 }
 
-.close-icon img {
+.close-icon {
 	width: 3rem;
 	height: 3rem;
 }
