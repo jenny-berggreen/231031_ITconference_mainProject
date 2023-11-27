@@ -41,26 +41,39 @@ closeMenuIcon.addEventListener('click', closeOpenedHamburgerMenu);
 document.addEventListener('DOMContentLoaded', function () {
     // function to scroll to a specific section
     function scrollToSection(sectionId) {
+		openedHamburgerMenu.classList.remove('opened-hamburger-menu--visible');
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
 
     // navigation links
-    document.querySelector('.nav__element:nth-child(1)').addEventListener('click', function () {
-        scrollToSection('about-section');
-    });
+	const aboutNavElements = document.querySelectorAll('.nav__about');
+	const speakersNavElements = document.querySelectorAll('.nav__speakers');
 
-    document.querySelector('.nav__element:nth-child(2)').addEventListener('click', function () {
-        scrollToSection('speakers-section');
-    });
+	aboutNavElements.forEach((aboutElement) => {
+		aboutElement.addEventListener('click', function () {
+			scrollToSection('about-section');
+		});
+	});
+
+	speakersNavElements.forEach((speakersElement) => {
+		speakersElement.addEventListener('click', function () {
+			scrollToSection('speakers-section');
+		});
+	});
 
 	// register buttons
-    document.querySelector('.nav__element.register-button').addEventListener('click', function () {
-        scrollToSection('register-section');
-    }); 
-	
-    document.querySelector('.join-us-section .register-button').addEventListener('click', function () {
-        scrollToSection('register-section');
-    });
+	const navRegisterButtons = document.querySelectorAll('.nav__register-button');
+	const joinUsRegisterButton = document.querySelector('.join-us-section .register-button');
+
+	navRegisterButtons.forEach((registerButton) => {
+		registerButton.addEventListener('click', function () {
+			scrollToSection('register-section');
+		});
+	});
+
+	joinUsRegisterButton.addEventListener('click', function () {
+		scrollToSection('register-section');
+	});
 });
 
 const scrollToTopButton = document.querySelector('.scrollButton');
