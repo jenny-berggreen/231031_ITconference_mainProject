@@ -23,12 +23,18 @@ const hideNavColor = () => {
 
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const openedHamburgerMenu = document.querySelector('.opened-hamburger-menu');
+const closeMenuIcon = document.querySelector('.close-icon');
 
 const displayOpenedHamburgerMenu = () => {
 	openedHamburgerMenu.classList.add('opened-hamburger-menu--visible');
 }
 
+const closeOpenedHamburgerMenu = () => {
+	openedHamburgerMenu.classList.remove('opened-hamburger-menu--visible');
+}
+
 hamburgerIcon.addEventListener('click', displayOpenedHamburgerMenu);
+closeMenuIcon.addEventListener('click', closeOpenedHamburgerMenu);
 
 // ------------------------- scrolling -------------------------
 
