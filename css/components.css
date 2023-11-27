@@ -134,6 +134,12 @@
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.accordion__button {
+		font-size: var(--font-size-tablet-base);
+	}
+}
+
 .accordion__button::before {
 	content: '';
 	display: inline-block;
@@ -143,6 +149,13 @@
 	background-size: contain;
 	margin-left: 1rem;
 	margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+	.accordion__button::before {
+		width: 2rem;
+		height: 2rem;
+	}
 }
 
 .accordion--expanded .accordion__button::before {

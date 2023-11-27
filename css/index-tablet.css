@@ -47,9 +47,17 @@
 		height: 400px;
 	}
 
+	.slideshow__controls {
+		bottom: -30px;
+	}
+
 	.slideshow__control-button {
 		width: 60px;
 		height: 60px;
+	}
+
+	.filter-button {
+		font-size: 15px;
 	}
 
 	.speaker-card {
@@ -79,7 +87,7 @@
 	}
 
 	.form__input-text {
-		height: 1.5em;
+		height: 2em;
 	}
 
 	.conference-pass__title {
@@ -124,5 +132,69 @@
 
 	.keypoints-container {
 		text-align: center;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.hamburger-icon {
+		width: 3rem;
+		height: 2rem;
+	}
+
+	.about-section {
+		width: 90%;
+	}
+
+	.form-container {
+		width: 80%;
+	}
+
+	.form__label {
+		font-size: 18px;
+	}
+
+	.form__input-text {
+		height: 2em;
+		font-size: 18px;
+	}
+
+	.conference-pass {
+		gap: var(--spacing-small);
+		width: 240px;
+		height: 18rem;
+	}
+
+	.conference-pass__title {
+		font-size: 18px;
+	}
+
+	.conference-pass__price {
+		font-size: var(--font-size-tablet-h3);
+	}
+	
+	.conference-pass__description {
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 620px) {
+	h1 {
+		font-size: 45px;
+	}
+
+	h2 {
+		font-size: 35px;
+	}
+
+	h3 {
+		font-size: 28px;
+	}
+
+	h4 {
+		font-size: 23px;
+	}
+
+	.keypoints-container h3 {
+		font-size: 25px;
 	}
 }
