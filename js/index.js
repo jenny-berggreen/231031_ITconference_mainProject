@@ -19,6 +19,17 @@ const hideNavColor = () => {
   navBar.style.backgroundColor = 'transparent';
 };
 
+// ------------------------- hamburger menu -------------------------
+
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const openedHamburgerMenu = document.querySelector('.opened-hamburger-menu');
+
+const displayOpenedHamburgerMenu = () => {
+	openedHamburgerMenu.classList.add('opened-hamburger-menu--visible');
+}
+
+hamburgerIcon.addEventListener('click', displayOpenedHamburgerMenu);
+
 // ------------------------- scrolling -------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
