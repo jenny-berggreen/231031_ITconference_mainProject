@@ -1,17 +1,12 @@
 
 /* ------------------------------------ scroll to top button ------------------------------------ */
 
-.scrollButton {
+.scroll-button {
 	display: none;
 
 	position: fixed;
 	right: 10px;
 	bottom: 20px;
-
-	width: 100px;
-	height: 50px;
-
-	border-radius: var(--border-radius);
 
 	font-family: 'Inter-SemiBold';
 
@@ -22,11 +17,24 @@
 	box-shadow: 0 0 10px 1px var(--color-primary);
 }
 
-.scrollButton:hover {
+@media screen and (min-width: 769px) {
+	.scroll-button {
+		width: 100px;
+		height: 50px;
+		border-radius: var(--border-radius);
+	}
+
+	.scroll-button::before {
+		content: 'To the top';
+		font-size: 17px;
+	}
+}
+
+.scroll-button:hover {
 	background-color: var(--color-primary);
 }
 
-.displayBlock {
+.display-block {
 	display: block;
 }
 
@@ -42,15 +50,19 @@
 	bottom: 20px;
 	margin: auto;
 
-	height: 50px;
-	padding: 0 20px;
-
 	border-radius: var(--border-radius);
 
 	z-index: 2;
 
 	color: var(--color-foreground);
 	background-color: rgb(0, 146, 104);
+}
+
+@media screen and (min-width: 481px) {
+	.toast {
+		height: 50px;
+		padding: 0 20px;
+	}
 }
 
 
@@ -123,7 +135,6 @@
 	gap: 0.5rem;
 
 	width: 100%;
-	padding: var(--spacing-x-small);
 
 	color: var(--color-foreground);
 }
@@ -138,6 +149,12 @@
 	.accordion__button::before {
 		width: 2.5rem;
 		height: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.accordion__button {
+		padding: var(--spacing-x-small);
 	}
 }
 

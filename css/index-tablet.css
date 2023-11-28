@@ -124,6 +124,22 @@
 }
 
 @media screen and (max-width: 768px) {
+	.scroll-button {
+		width: 90px;
+		height: 40px;
+		border-radius: var(--border-radius);
+	}
+
+	.scroll-button::before {
+		content: 'To the top';
+		font-size: 14px;
+	}
+
+	nav {
+		height: 4rem;
+		padding: 0 var(--spacing-larger);
+	}
+
 	.nav__elements {
 		display: none;
 	}

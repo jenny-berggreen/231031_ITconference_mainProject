@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-const scrollToTopButton = document.querySelector('.scrollButton');
+const scrollToTopButton = document.querySelector('.scroll-button');
 
 	window.addEventListener('scroll', function() {
 		if (window.scrollY > 300) {
@@ -87,11 +87,11 @@ const scrollToTopButton = document.querySelector('.scrollButton');
 	});
 
 	function displayButton() {
-	scrollToTopButton.classList.add('displayBlock');
+	scrollToTopButton.classList.add('display-block');
 	}
 
 	function hideButton() {
-	scrollToTopButton.classList.remove('displayBlock');
+	scrollToTopButton.classList.remove('display-block');
 	}
 
 	function scrollToTop() {

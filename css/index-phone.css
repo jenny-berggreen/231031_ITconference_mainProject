@@ -1,4 +1,21 @@
 @media screen and (max-width: 480px) {
+	.scroll-button {
+		width: 40px;
+		height: 40px;
+		border-radius: var(--border-radius-max);
+	}
+
+	.scroll-button::before {
+		content: '\2191';
+		font-size: 18px;
+	}
+
+	.toast {
+		font-size: 10px;
+		height: 30px;
+		padding: 0 10px;
+	}
+
 	h1 {
 		font-size: var(--font-size-phone-h1);
 	}
@@ -13,6 +30,42 @@
 
 	h4 {
 		font-size: var(--font-size-phone-h4);
+	}
+
+	.logo span {
+		font-size: var(--font-size-phone-h3);
+	}
+
+	.opened-hamburger-menu {
+		gap: var(--spacing-small);
+	
+		width: 100vw;
+		height: 100vh;
+	
+		background-color: var(--color-primary);
+	}
+	
+	.opened-hamburger-menu span {
+		font-size: var(--font-size-phone-h3);
+	}
+	
+	.close-icon-container {
+		margin-bottom: var(--spacing-medium);
+	}
+	
+	.close-icon {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	nav {
+		height: 3rem;
+		padding: 0 var(--spacing-medium);
+	}
+
+	.hamburger-icon {
+		width: 2rem;
+		height: 1.3rem;
 	}
 
 	header {
@@ -45,15 +98,16 @@
 
 	.about-section {
 		gap: var(--spacing-medium);
+		padding: var(--spacing-small);
 	}
 
 	.accordions-container {
-		width: 110%;
 		gap: var(--spacing-small);
 	}
 
 	.accordion__button {
-		font-size: var(--font-size-phone-h4);
+		font-size: var(--font-size-phone-base);
+		padding: 0.2rem;
 	}
 
 	.accordion__button::before {
@@ -62,7 +116,32 @@
 	}
 
 	.accordion__content {
-		font-size: var(--font-size-phone-base);
+		font-size: 12px;
+	}
+
+	.filter-buttons-container {
+		gap: 0.5em;
+	}
+
+	.filter-button {
+		font-size: 12px;
+	}
+
+	.slideshow__counter {
+		font-size: 12px;
+	}
+
+	.slideshow__slides {
+		height: 250px;
+	}
+
+	.slideshow__controls {
+		gap: var(--spacing-x-small);
+	}
+
+	.slideshow__control-button {
+		width: 40px;
+		height: 40px;
 	}
 
 	.speaker-card {
