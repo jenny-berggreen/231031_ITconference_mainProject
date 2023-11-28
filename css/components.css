@@ -207,11 +207,15 @@
 	align-items: center;
 	justify-content: center;
 
-	width: 35px;
-	height: 35px;
-
 	border: solid 3px var(--color-accent-2);
 	border-radius: var(--border-radius-max);
+}
+
+@media screen and (min-width: 481px) {
+	.radiobutton__button {
+		width: 35px;
+		height: 35px;
+	}
 }
 
 .radiobutton__button__dot {

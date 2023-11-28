@@ -111,19 +111,6 @@
 }
 
 @media screen and (max-width: 933px) {
-	.nav__elements {
-		display: none;
-	}
-
-	.hamburger-icon-container {
-		display: block;
-	}
-
-	.hamburger-icon {
-		width: 4rem;
-		height: 2.5rem;
-	}
-
 	.headlines-container {
 		flex-direction: column;
 		align-items: start;
@@ -137,6 +124,14 @@
 }
 
 @media screen and (max-width: 768px) {
+	.nav__elements {
+		display: none;
+	}
+
+	.hamburger-icon-container {
+		display: block;
+	}
+
 	.hamburger-icon {
 		width: 3rem;
 		height: 2rem;
@@ -144,6 +139,15 @@
 
 	.about-section {
 		width: 90%;
+	}
+
+	.speaker-card {
+		width: 250px;
+		height: 18rem;
+	}
+
+	.speaker-card__image-container {
+		height: 130px;
 	}
 
 	.accordion__button {
