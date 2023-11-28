@@ -86,15 +86,15 @@ const scrollToTopButton = document.querySelector('.scroll-button');
 		}
 	});
 
-	function displayButton() {
+	const displayButton = () => {
 	scrollToTopButton.classList.add('display-block');
 	}
 
-	function hideButton() {
+	const hideButton = () => {
 	scrollToTopButton.classList.remove('display-block');
 	}
 
-	function scrollToTop() {
+	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,
 			behavior: "smooth"
@@ -265,7 +265,7 @@ updateCounter();
 
 const radiobuttons = document.querySelectorAll('.radiobutton__button');
 
-function toggleRadiobuttonChosenClass(event) {
+const toggleRadiobuttonChosenClass = (event) => {
 	// Remove "chosen" class from all radio buttons
 	radiobuttons.forEach(button => {
 	  button.classList.remove('radiobutton__button--chosen');
@@ -277,14 +277,14 @@ function toggleRadiobuttonChosenClass(event) {
 	clickedButton.classList.remove('radiobutton__button--hover'); // don´t display hover effect right after click
 }
 
-function addRadiobuttonHoverClass(event) {
+const addRadiobuttonHoverClass = (event) => {
 	const hoveredButton = event.currentTarget;
 	if (!hoveredButton.classList.contains('radiobutton__button--chosen')) { // hovering over non chosen button
 	  hoveredButton.classList.add('radiobutton__button--hover');			// display darker border color
 	}
   }
   
-  function removeRadiobuttonHoverClass(event) {
+  const removeRadiobuttonHoverClass = (event) => {
 	const hoveredButton = event.currentTarget;
 	hoveredButton.classList.remove('radiobutton__button--hover'); // display normal border color when mouse leaves button
   }
@@ -300,7 +300,7 @@ radiobuttons.forEach(button => {
 
 const conferencePasses = document.querySelectorAll('.conference-pass');
 
-function handleClickOnConferencePass(event) {
+const handleClickOnConferencePass = (event) => {
 	// Remove "chosen" and "inactive" classes from all conference passes
 	conferencePasses.forEach(pass => {
 	  pass.classList.remove('conference-pass--chosen', 'conference-pass--inactive');
@@ -319,14 +319,14 @@ function handleClickOnConferencePass(event) {
 	  });
 }
 
-function addConferencePassHoverClass(event) {
+const addConferencePassHoverClass = (event) => {
 	const hoveredPass = event.currentTarget;
 	if (!hoveredPass.classList.contains('conference-pass--chosen')) { // hovering over non chosen pass
 	  hoveredPass.classList.add('conference-pass--hover');			// display box shadow
 	}
   }
   
-  function removeConferencePassHoverClass(event) {
+  const removeConferencePassHoverClass = (event) => {
 	const hoveredPass = event.currentTarget;
 	hoveredPass.classList.remove('conference-pass--hover'); // display default pass style when mouse leaves button
   }
