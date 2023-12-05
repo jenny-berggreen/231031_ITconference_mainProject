@@ -3,14 +3,6 @@
 
 const navBar = document.querySelector('nav');
 
-window.addEventListener('scroll', function() {
-	if (window.scrollY > 1) {
-		displayNavColor();
-	} else {
-		hideNavColor();
-	}
-});
-
 const displayNavColor = () => {
 	navBar.style.backgroundColor = 'var(--color-primary)';
 };
@@ -18,6 +10,15 @@ const displayNavColor = () => {
 const hideNavColor = () => {
   navBar.style.backgroundColor = 'transparent';
 };
+
+window.addEventListener('scroll', function() {
+	// add background color to nav bar when you scroll down
+	if (window.scrollY > 1) {
+		displayNavColor();
+	} else {
+		hideNavColor();
+	}
+});
 
 // ------------------------- hamburger menu -------------------------
 
@@ -33,7 +34,10 @@ const closeOpenedHamburgerMenu = () => {
 	openedHamburgerMenu.classList.remove('opened-hamburger-menu--visible');
 }
 
+// open hamburger menu when you click on hamburger icon
 hamburgerIcon.addEventListener('click', displayOpenedHamburgerMenu);
+
+// close hamburger menu when you click on close icon
 closeMenuIcon.addEventListener('click', closeOpenedHamburgerMenu);
 
 // ------------------------- scrolling -------------------------
@@ -41,7 +45,7 @@ closeMenuIcon.addEventListener('click', closeOpenedHamburgerMenu);
 document.addEventListener('DOMContentLoaded', function () {
     // function to scroll to a specific section
     function scrollToSection(sectionId) {
-		openedHamburgerMenu.classList.remove('opened-hamburger-menu--visible');
+		openedHamburgerMenu.classList.remove('opened-hamburger-menu--visible'); // always close hamburger menu after click on links and before the page scrolls to correct section
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -76,32 +80,34 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+// scroll-to-top-button
 const scrollToTopButton = document.querySelector('.scroll-button');
 
-	window.addEventListener('scroll', function() {
-		if (window.scrollY > 300) {
-			displayButton();
-		} else {
-			hideButton();
-		}
-	});
-
-	const displayButton = () => {
-	scrollToTopButton.classList.add('display-block');
+window.addEventListener('scroll', function() {
+	// display button if the vertical scroll position is greater than 300 pixels
+	if (window.scrollY > 300) {
+		displayButton();
+	} else {
+		hideButton();
 	}
+});
 
-	const hideButton = () => {
-	scrollToTopButton.classList.remove('display-block');
-	}
+const displayButton = () => {
+scrollToTopButton.classList.add('display-block');
+}
 
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth"
-		})
-	}
+const hideButton = () => {
+scrollToTopButton.classList.remove('display-block');
+}
 
-	scrollToTopButton.addEventListener('click', scrollToTop);
+const scrollToTop = () => {
+	window.scrollTo({
+		top: 0,
+		behavior: "smooth"
+	})
+}
+
+scrollToTopButton.addEventListener('click', scrollToTop);
 
 
 // ------------------------- accordion -------------------------
@@ -123,7 +129,7 @@ accordions.forEach((accordion) => {
 const slideshow = document.querySelector('.slideshow-container');
 const slidesContainer = slideshow.querySelector('.slideshow__slides');
 let slides = slideshow.querySelectorAll('.slideshow__slide'); // initial slides
-let filteredSlides = [];
+let filteredSlides = []; // empty array for filtered slides
 const filterButtons = document.querySelectorAll('.filter-button');
 const clearFilters = document.querySelector('#filter-button__clear');
 const controls = slideshow.querySelectorAll('.slideshow__control-button');
@@ -225,7 +231,7 @@ filterButtons.forEach(filterButton => {
       filteredSlides[index].classList.add('slideshow__slide--visible'); // show first filtered slide
       counter.textContent = `${index + 1} of ${totalSlides}`; // update counter text
     } else {
-      // If no filtered slides, show the original slides
+      // if no filtered slides, show the original slides
       slides.forEach(slide => {
         slidesContainer.appendChild(slide);
       });
@@ -266,12 +272,12 @@ updateCounter();
 const radiobuttons = document.querySelectorAll('.radiobutton__button');
 
 const toggleRadiobuttonChosenClass = (event) => {
-	// Remove "chosen" class from all radio buttons
+	// remove "chosen" class from all radio buttons
 	radiobuttons.forEach(button => {
 	  button.classList.remove('radiobutton__button--chosen');
 	});
   
-	// Add "chosen" class to the clicked radio button
+	// add "chosen" class to the clicked radio button
 	const clickedButton = event.currentTarget;
 	clickedButton.classList.add('radiobutton__button--chosen');
 	clickedButton.classList.remove('radiobutton__button--hover'); // don´t display hover effect right after click
@@ -289,7 +295,7 @@ const addRadiobuttonHoverClass = (event) => {
 	hoveredButton.classList.remove('radiobutton__button--hover'); // display normal border color when mouse leaves button
   }
 
-// Attach click event listener to each radio button
+// attach click event listener to each radio button
 radiobuttons.forEach(button => {
 	button.addEventListener('click', toggleRadiobuttonChosenClass);
 	button.addEventListener('mouseover', addRadiobuttonHoverClass);
@@ -301,17 +307,17 @@ radiobuttons.forEach(button => {
 const conferencePasses = document.querySelectorAll('.conference-pass');
 
 const handleClickOnConferencePass = (event) => {
-	// Remove "chosen" and "inactive" classes from all conference passes
+	// remove "chosen" and "inactive" classes from all conference passes
 	conferencePasses.forEach(pass => {
 	  pass.classList.remove('conference-pass--chosen', 'conference-pass--inactive');
 	});
   
-	// Add "chosen" class to the clicked conference pass
+	// add "chosen" class to the clicked conference pass
 	const clickedPass = event.currentTarget;
 	clickedPass.classList.add('conference-pass--chosen');
 	clickedPass.classList.remove('conference-pass--hover'); // don´t display hover effect right after click
 
-	// Add "inactive" class to the non-clicked passes
+	// add "inactive" class to the non-clicked passes
 	conferencePasses.forEach(pass => {
 		if (pass !== clickedPass) {
 		  pass.classList.add('conference-pass--inactive');
@@ -331,7 +337,7 @@ const addConferencePassHoverClass = (event) => {
 	hoveredPass.classList.remove('conference-pass--hover'); // display default pass style when mouse leaves button
   }
 
-// Attach click event listener to each conference pass
+// attach click event listener to each conference pass
 conferencePasses.forEach(pass => {
 	pass.addEventListener('click', handleClickOnConferencePass);
 	pass.addEventListener('mouseover', addConferencePassHoverClass);
